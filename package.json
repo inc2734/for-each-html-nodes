@@ -1,17 +1,30 @@
 {
   "name": "@inc2734/for-each-html-nodes",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "inc2734",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/inc2734/for-each-html-nodes"
   },
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "files": [
     "src",
+    "dist",
     "package.json",
+    "package-lock.json",
     "LICENSE",
-    "package-lock.json"
-  ]
+    "README.md"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "build": "webpack src/index.js -o dist/index.js",
+    "prepublish": "npm run build"
+  }
 }

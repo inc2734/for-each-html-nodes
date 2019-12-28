@@ -1,11 +1,9 @@
 'use strict';
 
-export default function forEachHtmlNodes(htmlNodes, callback) {
+export default function(htmlNodes, callback) {
   if (0 < htmlNodes.length) {
-    let index = 0;
-    [].forEach.call(htmlNodes, (htmlNode) => {
-      callback(htmlNode, index);
-      index ++;
-    } );
+    Array.prototype.slice.call(htmlNodes, 0).forEach((node, index) => {
+      callback(node, index);
+    });
   }
-};
+}
